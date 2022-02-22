@@ -33,16 +33,6 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/", name="article_index", methods={"GET"})
-     */
-    public function index(ArticleRepository $articleRepository): Response
-    {
-        return $this->render('article/index.html.twig', [
-            'articles' => $articleRepository->findAll(),
-        ]);
-    }
-
-    /**
      * @Route("/new", name="article_new", methods={"GET", "POST"})
      */
     public function new(Request $request, EntityManagerInterface $entityManager): Response
@@ -66,16 +56,6 @@ class ArticleController extends AbstractController
         return $this->renderForm('article/new.html.twig', [
             'article' => $article,
             'form' => $form,
-        ]);
-    }
-
-    /**
-     * @Route("/{id}", name="article_show", methods={"GET"})
-     */
-    public function show(Article $article): Response
-    {
-        return $this->render('article/show.html.twig', [
-            'article' => $article,
         ]);
     }
 
