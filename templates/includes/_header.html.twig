@@ -1,0 +1,22 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{{ path('homepage') }}">Symfony Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mobileMenu">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item active row">
+                    <a class="nav-link" href="{{ path('homepage') }}">Home</a>
+                    <a class="nav-link" href="{{ path('article_index') }}">Articles</a>
+                    <a class="nav-link" href="{{ path('app_login') }}">
+                        {% if app.user %}
+                            Account
+                            {% else %}
+                            Connexion
+                        {% endif %}</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,28 @@
+<section>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Article</th>
+                <th>Content</th>
+                <th>CreationDate</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for comment in comments %}
+            <tr>
+                <td>{{ comment.article.title }}</td>
+                <td>{{ comment.content }}</td>
+                <td>{{ comment.creationDate ? comment.creationDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a class="btn btn-warning" href="{{ path('comment_edit', {'id': comment.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no comment yet</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>

@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ article.title }}
+    |
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="hero p-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-6">
+                    <img src="{{ article.picture }}" alt="" class="img-fluid">
+                </div>
+                <div class="col-sm-12 col-lg-6 mt-3">
+                    <h2>{{ article.title }}</h2>
+                    <p>By : {{ article.user.userName }}</p>
+                    <p class="card-text text-muted">
+                        Le
+                        {{ article.publicationDate|date('Y/m/d') }}
+                        <br>
+                        Dernière mise à jour le :
+                        {{ article.lastUpdateDate|date('Y/m/d') }}
+                    </p>
+                    <p class="lead">
+                        {{ article.content }}
+                    </p>
+                    {# <a href="{{ path('article_edit', {'id': article.id}) }}" class="btn btn-primary">Editer</a> #}
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h2>Comments :</h2>
+            <div class="comment-post">
+                {{ include('comment/_form.html.twig') }}
+            </div>
+            <div class="column comments-container">
+            <ul>
+                {% for comment in comments %}
+                    <li class="bloc-comment">
+                        <div class="comment-owner">{{ comment.user.userName }}</div>
+                        <div class="comment-content">
+                            {{ comment.content }}
+                        </div>
+                        <div class="comment-date">{{ comment.creationDate|date('Y/m/d H:i:s') }}</div>
+                    </li>
+                {% endfor %}
+            </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
