@@ -7,6 +7,7 @@
         <div class="collapse navbar-collapse" id="mobileMenu">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item active row">
+                    {% if is_granted('ROLE_ADMIN') %} <a class="nav-link btn-danger" href="{{ path('admin') }}">ADMIN</a> {% endif %}
                     <a class="nav-link" href="{{ path('homepage') }}">Home</a>
                     <a class="nav-link" href="{{ path('article_index') }}">Articles</a>
                     <a class="nav-link" href="{{ path('app_login') }}">
