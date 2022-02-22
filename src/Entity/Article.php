@@ -57,7 +57,7 @@ class Article
     private $User;
 
     /**
-     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="Article")
+     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="Article", cascade={"remove"}, orphanRemoval=true)
      */
     private $comment;
 

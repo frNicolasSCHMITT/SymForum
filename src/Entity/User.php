@@ -52,12 +52,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $userName;
 
     /**
-     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="User")
+     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="User", cascade={"remove"}, orphanRemoval=true)
      */
     private $articles;
 
     /**
-     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="User")
+     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="User", cascade={"remove"}, orphanRemoval=true)
      */
     private $comment;
 
