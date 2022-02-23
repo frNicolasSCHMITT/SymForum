@@ -47,7 +47,7 @@ class CoreController extends AbstractController
     }
 
     /**
-     * @Route("/articles/{id}", name="show_article", requirements={"id"="\d+"}, methods={"GET", "POST"})
+     * @Route("/index/{id}", name="show_article", requirements={"id"="\d+"}, methods={"GET", "POST"})
      */
     public function show( Article $article, CommentRepository $commentRepository, Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -83,7 +83,7 @@ class CoreController extends AbstractController
     }
 
     /**
-     * @Route("/articles", name="article_index")
+     * @Route("/index", name="article_index")
      */
     public function articleIndex(ArticleRepository $articleRepository): Response
     {
