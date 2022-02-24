@@ -3,9 +3,15 @@
 {% block title %}Edit User{% endblock %}
 
 {% block body %}
-    <h1>Edit User</h1>
+    <div class="edition-bloc">
+        <h1>Edit User</h1>
 
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
-
-    {{ include('user/_delete_form.html.twig') }}
+        {% if is_granted('ROLE_ADMIN') %}
+            <p class="alert"> 🛑 You cannot modify the admin account here ! 🛑 </p>
+            <p class="alert"> Use the admin inteface ! </p>
+        {% else %}
+            {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+            {{ include('user/_delete_form.html.twig') }}
+        {% endif %}
+    </div>
 {% endblock %}

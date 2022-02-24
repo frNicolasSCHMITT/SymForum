@@ -23,15 +23,15 @@
                         Dernière mise à jour le :
                         {{ article.lastUpdateDate|date('Y/m/d') }}
                     </p>
-                    <p class="lead">
-                        {{ article.content }}
-                    </p>
                     {# <a href="{{ path('article_edit', {'id': article.id}) }}" class="btn btn-primary">Editer</a> #}
                 </div>
+                <p class="article-content lead">
+                        {{ article.content }}
+                    </p>
             </div>
         </div>
         <div class="container">
-            <h2>Comments :</h2>
+            <h3>Comments :</h3>
             <div class="comment-post">
                 {{ include('comment/_form.html.twig') }}
             </div>
@@ -39,11 +39,11 @@
             <ul>
                 {% for comment in comments %}
                     <li class="bloc-comment">
-                        <div class="comment-owner">{{ comment.user.userName }}</div>
+                        <div class="comment-owner">By : {{ comment.user.userName }}</div>
                         <div class="comment-content">
                             {{ comment.content }}
                         </div>
-                        <div class="comment-date">{{ comment.creationDate|date('Y/m/d H:i:s') }}</div>
+                        <div class="comment-date text-muted">Added : {{ comment.creationDate|date('Y/m/d H:i:s') }}</div>
                     </li>
                 {% endfor %}
             </ul>

@@ -4,6 +4,161 @@
   box-sizing: border-box;
 }
 
+.alert{
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  color: red;
+}
+
+a:hover, button:hover{
+  text-decoration: underline !important;
+  text-underline-offset: 5px;
+  filter: contrast(200%);
+}
+
+h2{
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+h3{
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+th{
+  background-color: #343A40 !important;
+  color: #FFF;
+}
+
+/* LOGIN SCREEN */
+
+.login-form{
+  margin: 5%;
+  max-width: 500px;
+}
+
+.signIn-group{
+  margin: 5%;
+  align-items: flex-end;
+}
+
+.signIn-btn{
+  margin-right: 5%;
+}
+
+/* ACCOUNT SCREEN */
+
+.user-welcome{
+  margin: 5%;
+}
+
+.user-welcome p{
+  font-style: italic;
+}
+
+.user-welcome .btn{
+  margin: 5px 0;
+}
+
+.table-header{
+  margin: 0 50px 20px;
+  justify-content: space-between;
+}
+
+tr:nth-child(even) {background: #e4e4e4}
+tr:nth-child(odd) {background: #FFF}
+
+/* EDIT SCREENS */
+
+.edition-bloc, .comment-edition-bloc {
+  margin: 5%;
+  max-width: 500px;
+}
+
+.edition-bloc h1, .comment-edition-bloc h1{
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 25px;
+}
+
+.edition-bloc button, .comment-edition-bloc button{
+  margin: 10px 0;
+}
+
+.edition-bloc > form > div {
+  width: 100%;
+}
+
+.edition-bloc label{
+  border: #343A40 solid 2px;
+  border-radius: 5px 0 0 5px;
+  background-color: #343A40;
+  color: white;
+  width: 30%;
+  text-align: center;
+}
+
+.edition-bloc input {
+  width: 70%;
+  border-radius: 0 5px 5px 0;
+}
+
+.comment-edition-bloc > form > div {
+  width: 100%;
+  display: flex;
+}
+
+.comment-edition-bloc label, #article :nth-child(3) label, .comment-post label {
+  border: #343A40 solid 2px;
+  border-radius: 5px 5px 0 0;
+  background-color: #343A40;
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.comment-edition-bloc textarea, #article :nth-child(3) textarea, .comment-post textarea{
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#article :nth-child(4){
+  display: flex;
+  align-items: center;
+}
+
+#article :nth-child(4) input{
+  width: 28px;
+  height: 28px;
+  margin-left: 10px;
+}
+
+#article :nth-child(4) label{
+  margin: 0;
+}
+
+.comment-form{
+  max-width: 500px;
+  margin: 20px;
+}
+
+.comments-container ul{
+  list-style: none;
+}
+
+/* ARTICLE PAGE */
+
+.article-content{
+  margin: 20px 0;
+}
+
 @media (max-width: 991px) {
   .nav-link{
     margin: 10px;

@@ -3,9 +3,11 @@
 {% block title %}Edit Comment{% endblock %}
 
 {% block body %}
-    <h1>Edit Comment</h1>
+    <div class="comment-edition-bloc">
+        <h1>Edit Comment</h1>
 
-    {{ include('comment/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('comment/_form.html.twig', {'button_label': 'Update'}) }}
 
-    {{ include('comment/_delete_form.html.twig') }}
+        {{ include('comment/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

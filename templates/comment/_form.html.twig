@@ -1,9 +1,11 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {% if app.user %} 
-        <button class="btn btn-info">{{ button_label|default('Send') }}</button>
-        
-        {% else %}
-        <a href="{{ path('app_login') }}" class="btn btn-success">Log In to comment</a>
-    {% endif %}
+    <div class="comment-form">
+        {{ form_widget(form) }}
+        {% if app.user %} 
+            <button class="btn btn-info">{{ button_label|default('Send') }}</button>
+            
+            {% else %}
+            <a href="{{ path('app_login') }}" class="btn btn-success">Log In to comment</a>
+        {% endif %}
+    </div>
 {{ form_end(form) }}
