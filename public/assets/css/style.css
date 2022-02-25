@@ -153,6 +153,26 @@ tr:nth-child(odd) {background: #FFF}
   list-style: none;
 }
 
+.user-profile{
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.user-picture{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-image: url(https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.user-picture img {
+  border-radius: 50%;
+}
+
 /* ARTICLE PAGE */
 
 .article-content{

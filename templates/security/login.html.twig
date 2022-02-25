@@ -11,9 +11,15 @@
     {% if app.user %}
         <div class="user-welcome">
             <h2>Welcome !</h2>
-            <p>
-                You are logged in as {{ app.user.username }}
-            </p>
+            <div class="user-profile">
+                <div class="user-picture">
+                    <img src="{{ app.user.picture }}" alt="" class="img-fluid">
+                </div> 
+                <div class="user-pres">
+                    <p>You are logged in as </p>
+                    <div>{{ app.user.userName }}</div> 
+                </div>                 
+            </div>
             <a class="btn btn-danger " href="{{ path('app_logout') }}">Logout</a>
             {{ include('user/index.html.twig') }}
         </div>

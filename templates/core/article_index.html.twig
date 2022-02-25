@@ -18,8 +18,15 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ article.title }}</h5>
                         <p class="card-text text-muted">
-                            By :   
-                            {{ article.user.userName }}
+                            <div class="user-profile">
+                                <div class="user-picture">
+                                    <img src="{{ article.user.picture }}" alt="" class="img-fluid">
+                                </div> 
+                                <div class="user-pres">
+                                    <p>By : </p>
+                                    <div>{{ article.user.userName }}</div> 
+                                </div>                 
+                            </div>
                             <br>
                             Published :
                             {{ article.publicationDate|date('Y/m/d') }}

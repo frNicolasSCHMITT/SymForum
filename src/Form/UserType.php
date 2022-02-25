@@ -25,6 +25,7 @@ class UserType extends AbstractType
 
         $builder
             ->add('userName')
+            ->add('picture')
             ->add('email')
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,

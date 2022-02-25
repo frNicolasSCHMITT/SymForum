@@ -15,7 +15,13 @@
                 </div>
                 <div class="col-sm-12 col-lg-6 mt-3">
                     <h2>{{ article.title }}</h2>
-                    <p>By : {{ article.user.userName }}</p>
+                     <div class="user-profile">
+                        <p>By : </p>                            
+                        <div class="user-picture">
+                            <img src="{{ article.user.picture }}" alt="" class="img-fluid">
+                        </div>
+                        <div>{{ article.user.userName }}</div>
+                    </div>
                     <p class="card-text text-muted">
                         Le
                         {{ article.publicationDate|date('Y/m/d') }}
@@ -39,7 +45,13 @@
             <ul>
                 {% for comment in comments %}
                     <li class="bloc-comment">
-                        <div class="comment-owner">By : {{ comment.user.userName }}</div>
+                        <div class="user-profile">
+                            <p>By : </p>                            
+                            <div class="user-picture">
+                                <img src="{{ comment.user.picture }}" alt="" class="img-fluid">
+                            </div>
+                            <div class="comment-owner">{{ comment.user.userName }}</div>
+                        </div>
                         <div class="comment-content">
                             {{ comment.content }}
                         </div>
