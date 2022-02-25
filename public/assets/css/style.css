@@ -111,7 +111,7 @@ tr:nth-child(odd) {background: #FFF}
 
 .comment-edition-bloc > form > div {
   width: 100%;
-  display: flex;
+  /* display: flex; */
 }
 
 .comment-edition-bloc label, #article :nth-child(3) label, .comment-post label {
@@ -157,6 +157,7 @@ tr:nth-child(odd) {background: #FFF}
 
 .article-content{
   margin: 20px 0;
+  white-space: pre-wrap;
 }
 
 @media (max-width: 991px) {
