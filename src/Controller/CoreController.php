@@ -39,7 +39,7 @@ class CoreController extends AbstractController
         $articles = $articleRepository->findBy(
             ['isPublished' => true],
             ['lastUpdateDate' => 'DESC'],
-            10,
+            8,
             0
         );
 
@@ -87,7 +87,11 @@ class CoreController extends AbstractController
      */
     public function articleIndex(ArticleRepository $articleRepository): Response
     {
-        $articles = $articleRepository->findAll();
+        // $articles = $articleRepository->findAll();
+        $articles = $articleRepository->findBy(
+            ['isPublished' => true],
+            ['lastUpdateDate' => 'ASC']
+        );
 
         return $this->render('core/article_index.html.twig', ['articles' => $articles]);
     }

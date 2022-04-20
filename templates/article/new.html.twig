@@ -3,7 +3,9 @@
 {% block title %}New Article{% endblock %}
 
 {% block body %}
-    <h1>Create new Article</h1>
+    <div class="new-article">
+        <h1>Create new Article</h1>
 
-    {{ include('article/_form.html.twig') }}
+        {{ include('article/_form.html.twig') }}
+    </div>
 {% endblock %}

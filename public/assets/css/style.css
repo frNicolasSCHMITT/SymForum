@@ -114,6 +114,26 @@ tr:nth-child(odd) {background: #FFF}
   /* display: flex; */
 }
 
+.new-article{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.new-article label{
+  border: #343A40 solid 2px;
+  border-radius: 5px 0 0 5px;
+  background-color: #343A40;
+  color: white;
+  padding: 0 5px;
+}
+
+.new-article button{
+  margin-top: 10px;
+}
+
 .comment-edition-bloc label, #article :nth-child(3) label, .comment-post label {
   border: #343A40 solid 2px;
   border-radius: 5px 5px 0 0;
