@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+.navbar-header{
+  border-bottom: #343A40 1px solid;
+  position: sticky;
+  top: 0px;
+  background-color: #FFFfff;
+  z-index: 1;
+}
+
 .alert{
   font-size: 2rem;
   font-weight: bold;
@@ -171,6 +179,17 @@ tr:nth-child(odd) {background: #FFF}
 
 .comments-container ul{
   list-style: none;
+}
+
+.bloc-comment {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: #343A40 dotted 3px;
+}
+
+.comment-content {
+  padding-left: 25px;
+  margin: 25px 0;
 }
 
 .user-profile{
