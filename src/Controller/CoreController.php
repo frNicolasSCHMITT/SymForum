@@ -18,6 +18,7 @@ use App\Repository\CommentRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Security;
+use Knp\Component\Pager\PaginatorInterface;
 
 class CoreController extends AbstractController
 {
@@ -34,13 +35,17 @@ class CoreController extends AbstractController
     /**
      * @Route("/", name="homepage")
      */
-    public function homepage(ArticleRepository $articleRepository): Response
+    public function homepage(Request $request, ArticleRepository $articleRepository, PaginatorInterface $paginator): Response
     {
-        $articles = $articleRepository->findBy(
+        $data = $articleRepository->findBy(
             ['isPublished' => true],
-            ['lastUpdateDate' => 'DESC'],
-            8,
-            0
+            ['lastUpdateDate' => 'DESC']
+        );
+
+        $articles = $paginator->paginate(
+            $data, // Requête contenant les données à paginer (ici nos articles)
+            $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+            8 // Nombre de résultats par page
         );
 
         return $this->render('core/index.html.twig', ['articles' => $articles]);
@@ -85,12 +90,18 @@ class CoreController extends AbstractController
     /**
      * @Route("/index", name="article_index")
      */
-    public function articleIndex(ArticleRepository $articleRepository): Response
+    public function articleIndex(Request $request, ArticleRepository $articleRepository, PaginatorInterface $paginator): Response
     {
         // $articles = $articleRepository->findAll();
-        $articles = $articleRepository->findBy(
+        $data = $articleRepository->findBy(
             ['isPublished' => true],
             ['lastUpdateDate' => 'ASC']
+        );
+
+        $articles = $paginator->paginate(
+            $data, // Requête contenant les données à paginer (ici nos articles)
+            $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+            8 // Nombre de résultats par page
         );
 
         return $this->render('core/article_index.html.twig', ['articles' => $articles]);

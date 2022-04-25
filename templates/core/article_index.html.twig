@@ -3,42 +3,43 @@
 {% block title %}New Article{% endblock %}
 
 {% block body %}
-  <div class="container mt-4">
-    <div class="row">
-        <div class="col">
-            <h2 class="text-center">Articles : </h2>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center">Articles : </h2>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="d-flex flex-row flex-wrap">
-            {% for article in articles %}
-                <div class="card m-2" style="width: 16rem;">
-                    <img class="card-img-top" src="{{ article.picture }}" alt="{{ article.title }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ article.title }}</h5>
-                        <p class="card-text text-muted">
-                            <div class="user-profile">
-                                <div class="user-picture">
-                                    <img src="{{ article.user.picture }}" alt="" class="img-fluid">
-                                </div> 
-                                <div class="user-pres">
-                                    <p>By : </p>
-                                    <div>{{ article.user.userName }}</div> 
-                                </div>                 
-                            </div>
-                            <br>
-                            Published :
-                            {{ article.publicationDate|date('Y/m/d') }}
-                            <br>
-                            Last Updated :
-                            {{ article.lastUpdateDate|date('Y/m/d') }}
-                        </p>
-                        <a href="{{ path('show_article', {'id': article.id}) }}" class="btn btn-primary">Lire</a>
+        <div class="row">
+            <div class="d-flex flex-row flex-wrap">
+                {% for article in articles %}
+                    <div class="card m-2" style="width: 16rem;">
+                        <img class="card-img-top" src="{{ article.picture }}" alt="{{ article.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ article.title }}</h5>
+                            <p class="card-text text-muted">
+                                <div class="user-profile">
+                                    <div class="user-picture">
+                                        <img src="{{ article.user.picture }}" alt="" class="img-fluid">
+                                    </div> 
+                                    <div class="user-pres">
+                                        <p>By : </p>
+                                        <div>{{ article.user.userName }}</div> 
+                                    </div>                 
+                                </div>
+                                <br>
+                                Published :
+                                {{ article.publicationDate|date('Y/m/d') }}
+                                <br>
+                                Last Updated :
+                                {{ article.lastUpdateDate|date('Y/m/d') }}
+                            </p>
+                            <a href="{{ path('show_article', {'id': article.id}) }}" class="btn btn-primary">Lire</a>
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
+        {{ knp_pagination_render(articles) }}
     </div>
-  </div>
 {% endblock %}

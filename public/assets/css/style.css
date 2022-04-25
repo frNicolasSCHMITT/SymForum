@@ -224,3 +224,34 @@ tr:nth-child(odd) {background: #FFF}
     margin: 10px;
   }
 }
+
+.pagination{
+  text-align: right;
+  margin: 50px;
+}
+
+.pagination  span{
+  margin: 5px;
+}
+
+.pagination span a{
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: solid 2px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: #222222;
+}
+
+.pagination span a:hover{
+  color: #ffffff;
+  background-color: #005CC8;
+}
+.pagination .current{
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  color: #005CC8;
+  font-weight: bold;
+}
